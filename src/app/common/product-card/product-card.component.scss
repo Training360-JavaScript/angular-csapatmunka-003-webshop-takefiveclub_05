@@ -3,10 +3,13 @@
 }
 
 .card-description {
-  height: 3em;
+  height: 4em;
 }
 
 .card-price, .card-stock {
   height: 1rem;
 }
 
+.card-body {
+  text-align: center;
+}
