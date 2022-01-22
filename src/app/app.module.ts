@@ -9,6 +9,8 @@ import { Cat02Component } from './page/cat02/cat02.component';
 import { HomeComponent } from './page/home/home.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
 import { ProductPaginationComponent } from './common/product-pagination/product-pagination.component';
+import { Cat03Component } from './page/cat03/cat03.component';
+import { Cat04Component } from './page/cat04/cat04.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProductPaginationComponent } from './common/product-pagination/product-
     Cat02Component,
     HomeComponent,
     ProductCardComponent,
-    ProductPaginationComponent
+    ProductPaginationComponent,
+    Cat03Component,
+    Cat04Component
   ],
   imports: [
     BrowserModule,
