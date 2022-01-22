@@ -7,17 +7,18 @@ export interface IMenuItem {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConfigService {
-
   appName: string = 'Sample Webshop';
 
   menuItems: IMenuItem[] = [
-    {text: 'Home', link: '/', icon: 'home'},
-    {text: 'Category01', link: '/cat01'},
-    {text: 'Category02', link: '/cat02'},
+    { text: 'Home', link: '/', icon: 'home' },
+    { text: 'Cooler', link: '/cooler' },
+    { text: 'Twist', link: '/twist' },
+    { text: 'Scaffa', link: '/scaffa' },
+    { text: 'Blazer', link: '/blazer' },
   ];
 
-  constructor() { }
+  constructor() {}
 }
