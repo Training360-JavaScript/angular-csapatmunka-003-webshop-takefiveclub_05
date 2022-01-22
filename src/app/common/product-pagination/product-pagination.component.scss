@@ -1,0 +1,26 @@
+.carousel-control-prev {
+  left: -20px!important;
+  width: 20px!important;
+  background-color: bisque!important;
+
+  border-top-left-radius: 25px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 25px;
+}
+
+.carousel-control-next {
+  right: -20px!important;
+  width: 20px!important;
+  background-color: bisque!important;
+
+  border-top-left-radius: 2px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 2px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: blue!important;
+}
+
