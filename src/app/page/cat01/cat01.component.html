@@ -1,2 +1,3 @@
-<app-product-list [phrase]="product">
-</app-product-list>
+<div class="row">
+  <app-product-list [products]="products | filter: '1':'catId'"></app-product-list>
+</div>
