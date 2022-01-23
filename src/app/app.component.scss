@@ -5,3 +5,15 @@
 .row {
   text-align: center;
 }
+
+.main_container {
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+@media (max-width: 1122px) {
+  .main_container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

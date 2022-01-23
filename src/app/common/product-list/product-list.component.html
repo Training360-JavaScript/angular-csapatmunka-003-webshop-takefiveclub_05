@@ -9,8 +9,8 @@
     placeholder="What kind of coctail are you want to drink?">
 </div>
 
-<div class="row">
-  <div class="col-12 col-md-6 col-lg-five" *ngFor="let product of products | filter:phrase:filterKey">
+<div class="product_list--container">
+  <div class="product_list--item" *ngFor="let product of products | filter:phrase:filterKey">
     <app-product-card [product]="product"></app-product-card>
   </div>
 </div>
