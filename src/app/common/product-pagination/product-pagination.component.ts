@@ -8,7 +8,9 @@ import { Product } from 'src/app/model/product';
 })
 export class ProductPaginationComponent implements OnInit {
 
-  @Input() productListPagination: Product[] = [new Product];
+  @Input() products: Product[] = [new Product];
+  @Input() id: string = "";
+
 
   constructor() { }
 
