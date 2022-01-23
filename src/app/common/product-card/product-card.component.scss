@@ -1,15 +1,21 @@
 .card-name {
   height: 3rem;
+  color: #3dd8fc;
 }
 
 .card-description {
   height: 4em;
+  color: #ffe045;
 }
 
-.card-price, .card-stock {
+.card-price,
+.card-stock {
   height: 1rem;
-}
+  color: #ffbdf3;
 
-.card-body {
-  text-align: center;
+
+  .card-body {
+    text-align: center;
+
+  }
 }

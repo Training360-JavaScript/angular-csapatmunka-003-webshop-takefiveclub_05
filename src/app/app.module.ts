@@ -11,6 +11,9 @@ import { ProductCardComponent } from './common/product-card/product-card.compone
 import { ProductPaginationComponent } from './common/product-pagination/product-pagination.component';
 import { Cat03Component } from './page/cat03/cat03.component';
 import { Cat04Component } from './page/cat04/cat04.component';
+import { ProductListComponent } from './common/product-list/product-list.component';
+import { FilterPipe } from './pipe/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,12 @@ import { Cat04Component } from './page/cat04/cat04.component';
     ProductCardComponent,
     ProductPaginationComponent,
     Cat03Component,
-    Cat04Component
+    Cat04Component,
+    ProductListComponent,
+    FilterPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

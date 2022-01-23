@@ -1,7 +1,7 @@
 .carousel-control-prev {
-  left: -20px!important;
-  width: 20px!important;
-  background-color: bisque!important;
+  left: -20px !important;
+  width: 20px !important;
+  background-color: white !important;
 
   border-top-left-radius: 25px;
   border-top-right-radius: 2px;
@@ -10,9 +10,9 @@
 }
 
 .carousel-control-next {
-  right: -20px!important;
-  width: 20px!important;
-  background-color: bisque!important;
+  right: -20px !important;
+  width: 20px !important;
+  background-color: white !important;
 
   border-top-left-radius: 2px;
   border-top-right-radius: 25px;
@@ -20,7 +20,12 @@
   border-bottom-left-radius: 2px;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  background-color: blue!important;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black !important;
+  width: 5px;
 }
 
+h1 {
+  color: #3dd8fc;
+}
