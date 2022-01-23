@@ -558,4 +558,8 @@ export class ProductService {
     },
   ];
   constructor() {}
+
+  getAll(): Product[] {
+    return this.list;
+  }
 }
