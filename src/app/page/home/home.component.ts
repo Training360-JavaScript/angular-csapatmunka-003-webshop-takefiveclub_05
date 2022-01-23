@@ -8,10 +8,12 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  productsFeatured: Product[];
+  // productsFeatured: Product[];
+  products: Product[];
 
   constructor(productService: ProductService) {
-    this.productsFeatured =  productService.list.filter(p => p.featured === true);
+    // this.productsFeatured =  productService.list.filter(p => p.featured === true);
+    this.products = productService.getAll();
    }
 
   ngOnInit(): void {
