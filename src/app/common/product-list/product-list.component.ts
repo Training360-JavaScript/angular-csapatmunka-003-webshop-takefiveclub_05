@@ -8,12 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  keys: string[] = Object.keys(new Product());
   @Input() products: Product[] = [];
-  phrase: string = '';
+  keys: string[] = Object.keys(new Product());
+  @Input() phrase: string = '';
   filterKey: string = '';
 
-  constructor() {}
+  constructor(productService: ProductService) {}
 
   ngOnInit(): void {}
 }
