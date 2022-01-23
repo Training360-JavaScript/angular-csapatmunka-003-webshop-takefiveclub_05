@@ -1,0 +1,22 @@
+.product_list--container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 40px;
+}
+
+.product_list--item {
+  justify-self: center;
+  align-self: center;
+}
+
+@media (max-width: 1024px) {
+  .product_list--container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 425px) {
+  .product_list--container {
+    grid-template-columns: 1fr;
+  }
+}
