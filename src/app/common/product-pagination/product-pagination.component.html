@@ -1,39 +1,39 @@
 <!-- <p>product-pagination works!</p> -->
 <h1>Now at discounted price</h1>
 <div>
-  <app-product-card class="d-inline-block" *ngFor="let product of productListPagination | slice: 0:5"
+  <!-- <app-product-card class="d-inline-block" *ngFor="let product of products | slice: 0:5"
     [product]="product">
-  </app-product-card>
+  </app-product-card> -->
 
 
 
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+  <div id={{id}} class="carousel slide" data-ride="carousel" data-interval="false">
     <div class="carousel-inner">
       <div class="carousel-item active">
 
-        <app-product-card class="d-inline-block" *ngFor="let product of productListPagination | slice: 0:5"
+        <app-product-card class="d-inline-block" *ngFor="let product of products | slice: 0:5"
           [product]="product">
         </app-product-card>
 
       </div>
       <div class="carousel-item">
 
-        <app-product-card class="d-inline-block" *ngFor="let product of productListPagination | slice: 5:10"
+        <app-product-card class="d-inline-block" *ngFor="let product of products | slice: 5:10"
           [product]="product">
         </app-product-card>
 
       </div>
       <div class="carousel-item">
-        <app-product-card class="d-inline-block" *ngFor="let product of productListPagination | slice: 15:20"
+        <app-product-card class="d-inline-block" *ngFor="let product of products | slice: 10:15"
           [product]="product">
         </app-product-card>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+    <button class="carousel-control-prev" type="button" [attr.data-target]="'#' + id" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+    <button class="carousel-control-next" type="button" [attr.data-target]="'#' + id" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </button>
