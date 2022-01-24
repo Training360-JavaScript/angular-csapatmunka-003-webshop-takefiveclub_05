@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductPaginationComponent } from './product-pagination.component';
+import { ProductCarouselComponent } from './product-carousel.component';
 
-describe('ProductPaginationComponent', () => {
-  let component: ProductPaginationComponent;
-  let fixture: ComponentFixture<ProductPaginationComponent>;
+describe('ProductCarouselComponent', () => {
+  let component: ProductCarouselComponent;
+  let fixture: ComponentFixture<ProductCarouselComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductPaginationComponent ]
+      declarations: [ ProductCarouselComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductPaginationComponent);
+    fixture = TestBed.createComponent(ProductCarouselComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
