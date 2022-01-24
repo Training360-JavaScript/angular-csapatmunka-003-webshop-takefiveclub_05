@@ -26,7 +26,7 @@ export class ProductService {
       price: 55,
       stock: 8,
       featured: true,
-      active: true,
+      active: false,
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export class ProductService {
       price: 67,
       stock: 13,
       featured: true,
-      active: true,
+      active: false,
     },
     {
       id: 4,
