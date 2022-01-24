@@ -8,7 +8,7 @@ import { Cat01Component } from './page/cat01/cat01.component';
 import { Cat02Component } from './page/cat02/cat02.component';
 import { HomeComponent } from './page/home/home.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
-import { ProductPaginationComponent } from './common/product-pagination/product-pagination.component';
+import { ProductCarouselComponent } from './common/product-carousel/product-carousel.component';
 import { Cat03Component } from './page/cat03/cat03.component';
 import { Cat04Component } from './page/cat04/cat04.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     Cat02Component,
     HomeComponent,
     ProductCardComponent,
-    ProductPaginationComponent,
+    ProductCarouselComponent,
     Cat03Component,
     Cat04Component,
     ProductListComponent,
