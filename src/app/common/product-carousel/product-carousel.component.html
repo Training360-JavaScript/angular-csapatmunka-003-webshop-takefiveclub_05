@@ -1,8 +1,8 @@
-<h1 class="carousel_title">Now at discounted price</h1>
+<h1 class="carousel_title">{{ title }}</h1>
 <div class="carousel_container">
 
   <div id={{id}} class="carousel slide" data-ride="carousel" data-interval="false">
-    
+
     <div class="carousel-inner">
 
       <div class="carousel-item" *ngFor="let sublist of carouselList; let first=first" [ngClass]="{'active': first} ">
