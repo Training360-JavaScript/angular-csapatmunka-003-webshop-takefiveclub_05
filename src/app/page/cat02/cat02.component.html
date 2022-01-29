@@ -1,3 +1,4 @@
 <div class="cat02_container">
+  <app-product-carousel [id]="'carousel-featured'" [products]="products | filter: '2':'catId' | filter: 'true':'featured'"></app-product-carousel>
   <app-product-list [products]="products | filter: '2':'catId'"></app-product-list>
 </div>

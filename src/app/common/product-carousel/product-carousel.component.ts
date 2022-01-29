@@ -8,6 +8,7 @@ import { Product } from 'src/app/model/product';
 })
 export class ProductCarouselComponent implements OnInit {
 
+  @Input() title: string = 'Featured Products'
   @Input() products: Product[] = [new Product()];
   @Input() id: string = 'carouselId';
 
