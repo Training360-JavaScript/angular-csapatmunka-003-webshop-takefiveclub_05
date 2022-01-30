@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Product } from '../model/product';
 
 @Injectable({
@@ -557,9 +560,27 @@ export class ProductService {
       active: false,
     },
   ];
-  constructor() {}
 
-  getAll(): Product[] {
-    return this.list;
+  apiUrl: string = environment.apiUrl;
+  entityName: string = 'list';
+  constructor(private http: HttpClient) {}
+
+  // getAll(): Product[] {
+  //   return this.list;
+  // }
+
+  /* async */
+  getAll(): Observable<Product[]> {
+    console.log(`${this.apiUrl}${this.entityName}`)
+    return this.http.get<Product[]>(`${this.apiUrl}${this.entityName}`)
   }
+
+  get(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}${this.entityName}/${id}`)
+  }
+
+  update(product: Product): Observable<Product> {
+    return this.http.patch<Product>(`${this.apiUrl}${this.entityName}/${product.id}`, product)
+  }
+
 }
