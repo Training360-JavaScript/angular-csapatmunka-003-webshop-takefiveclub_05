@@ -1,5 +1,6 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-carousel',
@@ -9,25 +10,35 @@ import { Product } from 'src/app/model/product';
 export class ProductCarouselComponent implements OnInit {
 
   @Input() title: string = 'Featured Products'
-  @Input() products: Product[] = [new Product()];
+  @Input() products$!: Observable<Product[]>;
   @Input() id: string = 'carouselId';
+  @Input() products: Product[] = [new Product()];
+
 
   public screenWidth: number = 0;
   public subLength: number = 5;
   public carouselList: Array<Product[]> = [[new Product()]];
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.products$.subscribe({
+      next: (value) => {
+        // this.products = value;
+        this.carouselList = this.listToMatrix(this.products, this.subLength);
+      },
+      error: (err) => console.error(err),
+    })
+    // console.log('this.products', this.products)
     this.screenWidth = window.innerWidth;
     this.setSublength();
-    this.carouselList = this.listToMatrix(this.products, this.subLength);
   }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.screenWidth = window.innerWidth;
-    console.log(this.screenWidth);
+    // console.log(this.screenWidth);
 
     if (this.screenWidth > 1024 && this.subLength != 5) {
       this.ngOnInit();

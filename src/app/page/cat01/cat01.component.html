@@ -1,4 +1,4 @@
 <div class="cat01_container">
-  <app-product-carousel [id]="'carousel-featured'" [products]="products | filter: '1':'catId' | filter: 'true':'featured'"></app-product-carousel>
-  <app-product-list [products]="products | filter: '1':'catId'"></app-product-list>
+<app-product-carousel [id]="'carousel-featured'" [products$]="products$" [products]="products$ | async | filter: '1':'catId' | filter: 'true':'featured'"></app-product-carousel>
+  <app-product-list [products]="products$ | async | filter: '1':'catId'"></app-product-list>
 </div>

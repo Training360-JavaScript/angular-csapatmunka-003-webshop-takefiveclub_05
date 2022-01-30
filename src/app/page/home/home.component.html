@@ -2,5 +2,5 @@
   <img src="/assets/pictures/Take5Logo.png" alt="" width="300" height="300">
 </div>
 <!-- <app-product-card></app-product-card> -->
-<app-product-carousel [id]="'carousel-featured'" [products]="products | filter: 'true':'featured'"></app-product-carousel>
-<app-product-carousel [title]="'Now at discounted price'" [id]="'carousel-active'" [products]="products | filter: 'true':'active'"></app-product-carousel>
+<app-product-carousel [id]="'carousel-featured'" [products$]="products$" [products]="products$ | async | filter: 'true':'featured'"></app-product-carousel>
+<app-product-carousel [title]="'Now at discounted price'" [id]="'carousel-active'" [products$]="products$" [products]="products$ | async | filter: 'true':'active'"></app-product-carousel>
