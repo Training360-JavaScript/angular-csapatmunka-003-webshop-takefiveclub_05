@@ -1,11 +1,12 @@
 {
-  "list": [{
+  "list": [
+    {
       "id": 1,
       "catId": 1,
       "name": "Rigid Didymodon Moss",
       "description": "morbi ut odio cras mi pede",
       "image": "/assets/pictures/1.jpg",
-      "price": 33,
+      "price": "3312",
       "stock": 8,
       "featured": false,
       "active": false
