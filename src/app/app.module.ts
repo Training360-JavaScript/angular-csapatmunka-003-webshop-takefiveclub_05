@@ -15,6 +15,8 @@ import { Cat04Component } from './page/cat04/cat04.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './page/admin/admin.component';
+import { DataEditorComponent } from './page/data-editor/data-editor.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FormsModule } from '@angular/forms';
     Cat04Component,
     ProductListComponent,
     FilterPipe,
+    AdminComponent,
+    DataEditorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

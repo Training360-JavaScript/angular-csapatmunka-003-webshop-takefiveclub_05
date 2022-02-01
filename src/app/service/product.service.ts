@@ -571,16 +571,22 @@ export class ProductService {
 
   /* async */
   getAll(): Observable<Product[]> {
-    console.log(`${this.apiUrl}${this.entityName}`)
-    return this.http.get<Product[]>(`${this.apiUrl}${this.entityName}`)
+    console.log(`${this.apiUrl}${this.entityName}`);
+    return this.http.get<Product[]>(`${this.apiUrl}${this.entityName}`);
   }
 
   get(id: number): Observable<Product> {
-    return this.http.get<Product>(`${this.apiUrl}${this.entityName}/${id}`)
+    return this.http.get<Product>(`${this.apiUrl}${this.entityName}/${id}`);
   }
 
   update(product: Product): Observable<Product> {
-    return this.http.patch<Product>(`${this.apiUrl}${this.entityName}/${product.id}`, product)
+    return this.http.patch<Product>(
+      `${this.apiUrl}${this.entityName}/${product.id}`,
+      product
+    );
   }
 
+  remove(id: Product): Observable<any> {
+    return this.http.delete<Observable<any>>(`${this.apiUrl}/${id}`);
+  }
 }

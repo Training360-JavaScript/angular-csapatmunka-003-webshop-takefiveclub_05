@@ -18,6 +18,7 @@ export class ConfigService {
     { text: 'Twist', link: '/twist' },
     { text: 'Scaffa', link: '/scaffa' },
     { text: 'Blazer', link: '/blazer' },
+    { text: 'Admin', link: '/admin' },
   ];
 
   constructor() {}

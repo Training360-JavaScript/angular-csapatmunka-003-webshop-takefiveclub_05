@@ -1,3 +1,4 @@
+import { AdminComponent } from './page/admin/admin.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Cat01Component } from './page/cat01/cat01.component';
@@ -28,13 +29,17 @@ const routes: Routes = [
     component: Cat04Component,
   },
   {
+    path: 'admin',
+    component: AdminComponent,
+  },
+  {
     path: '**',
     component: HomeComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
