@@ -17,11 +17,13 @@
       <tbody>
         <tr *ngFor="let item of products$ | async">
           <td class="idShow">{{ item.id }}</td>
-          <td> <input [(ngModel)]="item.name" type="text" class="form-control" name="name" id="name-id"></td>
-          <td> <input [(ngModel)]="item.catId" type="text" class="form-control" name="catId" id="cat-id"></td>
+          <td> <input [(ngModel)]="item.catId" type="text" class="form-control" name="catId" id="name-id"></td>
+          <td> <input [(ngModel)]="item.name" type="text" class="form-control" name="name" id="cat-id"></td>
           <td> <input [(ngModel)]="item.description" type="text" class="form-control" name="description"
               id="description-id"></td>
-          <td> <input [(ngModel)]="item.image" type="image" class="form-control" name="image" id="image-id"></td>
+          <td> <img src="{{item.image}}" alt="" width="80">
+            <!-- <img [(ngModel)]="item.image" type="image" class="form-control" name="image" id="image-id"> -->
+          </td>
           <td> <input [(ngModel)]="item.price" type="text" class="form-control" name="price" id="price-id"></td>
           <td> <input [(ngModel)]="item.stock" type="text" class="form-control" name="stock" id="stock-id"></td>
           <td> <input [(ngModel)]="item.featured" type="checkbox" class="form-control" name="featured" id="featured-id">
@@ -29,9 +31,11 @@
           <td> <input [(ngModel)]="item.active" type="checkbox" class="form-control" name="active" id="active-id"></td>
 
           <td>
-            <button class="btn-primary"><i class="fa fa-address-card" aria-hidden="true"></i></button>
-            <button class="btn-success"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-            <button class="btn-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            <button (click)="onRestore(item)" class="btn-primary"><i class="fa fa-refresh"
+                aria-hidden="true"></i></button>
+            <button (click)="onUpdate(item)" class="btn-success"> <i class="fa fa-save" aria-hidden="true"></i></button>
+            <button (click)="onDelete(item)" class="btn-danger"> <i class="fa fa-trash-o"
+                aria-hidden="true"></i></button>
           </td>
         </tr>
       </tbody>

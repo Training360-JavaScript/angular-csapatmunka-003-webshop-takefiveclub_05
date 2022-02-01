@@ -29,9 +29,21 @@ export class DataEditorComponent implements OnInit {
     this.products$ = this.productService.getAll();
   }
 
-  // onDelete(product: Product): void {
-  //   this.productService
-  //     .remove(product.id)
-  //     .subscribe((event) => (this.eventList$ = this.productService.getAll()));
-  // }
+  onDelete(product: Product): void {
+    this.productService
+      .remove(product.id)
+      .subscribe((event) => (this.products$ = this.productService.getAll()));
+  }
+
+  onUpdate(product: Product): void {
+    this.productService
+      .update(product)
+      .subscribe((event) => (this.products$ = this.productService.getAll()));
+  }
+
+  onRestore(product: Product): void {
+    this.productService
+      .get(product.id)
+      .subscribe((event) => (this.products$ = this.productService.getAll()));
+  }
 }
