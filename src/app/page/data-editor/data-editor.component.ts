@@ -1,6 +1,6 @@
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -12,6 +12,12 @@ import { userInfo } from 'os';
   styleUrls: ['./data-editor.component.scss'],
 })
 export class DataEditorComponent implements OnInit {
+
+  @Input() products: Product[] = [];
+  keys: string[] = Object.keys(new Product());
+  phrase: string = '';
+  filterKey: string = '';
+
   newProduct = new Product();
   productsUrl: string = 'http://localhost:3000';
   product$: Observable<Product> = this.activatedRoute.params.pipe(

@@ -1,4 +1,14 @@
 <h1>Editor of all cocktails</h1>
+<div class="col-4 form-group mt-5">
+  <select [(ngModel)]="filterKey" class="form-control">
+    <option value="">All column</option>
+    <option *ngFor="let key of keys" [value]=" key">{{key | titlecase}}</option>
+  </select>
+</div>
+<div class="col-8 mb-5 input_container">
+  <input [(ngModel)]="phrase" type="text" class="form-control"
+    placeholder="Type your search term here">
+</div>
 <div class="row">
   <div class="col-12">
     <table class="table">
@@ -27,7 +37,7 @@
           <td><input [(ngModel)]="newProduct.active" type="checkbox" class="form-control"></td>
           <td><button (click)="onCreate(newProduct)" class="btn btn-success">Add user</button></td>
         </tr>
-        <tr *ngFor="let item of products$ | async">
+        <tr *ngFor="let item of products$ | async | filter:phrase:filterKey">
           <td class="idShow">{{ item.id }}</td>
           <td> <input [(ngModel)]="item.catId" type="text" class="form-control" name="catId" id="name-id"></td>
           <td> <input [(ngModel)]="item.name" type="text" class="form-control" name="name" id="cat-id"></td>
