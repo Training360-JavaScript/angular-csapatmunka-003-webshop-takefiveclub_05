@@ -4,6 +4,40 @@
   }
 }
 
+.company_name {
+  background-color: #16397a;
+  color: rgb(194, 174, 66);
+  padding-left: 1rem;
+}
+
 .navbar {
   opacity: 95%;
 }
+
+.nav-item {
+  background-color: #153879;
+}
+
+#nav-links {
+  color: rgb(203, 109, 192);
+  border: 1px solid rgb(194, 174, 66);
+  border-radius: 10px;
+  padding-right: 0.5rem;
+  margin: 2rem;
+  font-weight: bold;
+}
+
+#nav-links:hover {
+  box-shadow: 5px 10px rgb(148, 133, 49);
+}
+
+#navbarSupportedContent {
+  background-color: #16397a;
+}
+
+#top-logo {
+  margin: 0.5rem;
+  border: 1px solid rgb(203, 109, 192);
+  border-radius: 10px;
+}
+
