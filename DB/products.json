@@ -549,6 +549,17 @@
       "stock": 46,
       "featured": false,
       "active": false
+    },
+    {
+      "id": 51,
+      "catId": 1,
+      "name": "tararara",
+      "description": "wetwzwzwe",
+      "image": "",
+      "price": 12,
+      "stock": 5,
+      "featured": true,
+      "active": false
     }
   ]
 }

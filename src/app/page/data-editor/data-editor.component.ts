@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { userInfo } from 'os';
 
 @Component({
   selector: 'app-data-editor',
@@ -11,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./data-editor.component.scss'],
 })
 export class DataEditorComponent implements OnInit {
+  newProduct = new Product();
   productsUrl: string = 'http://localhost:3000';
   product$: Observable<Product> = this.activatedRoute.params.pipe(
     switchMap((params) => this.productService.get(params['id']))
@@ -30,6 +32,9 @@ export class DataEditorComponent implements OnInit {
   }
 
   onDelete(product: Product): void {
+    if (!confirm('Are you sure to delete this product?')) {
+      return;
+    }
     this.productService
       .remove(product.id)
       .subscribe((event) => (this.products$ = this.productService.getAll()));
@@ -44,6 +49,12 @@ export class DataEditorComponent implements OnInit {
   onRestore(product: Product): void {
     this.productService
       .get(product.id)
+      .subscribe((event) => (this.products$ = this.productService.getAll()));
+  }
+
+  onCreate(product: Product): void {
+    this.productService
+      .create(product)
       .subscribe((event) => (this.products$ = this.productService.getAll()));
   }
 }

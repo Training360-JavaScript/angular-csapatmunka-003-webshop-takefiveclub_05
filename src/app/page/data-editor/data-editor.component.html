@@ -15,6 +15,18 @@
         <th>Operations on the product</th>
       </thead>
       <tbody>
+        <tr>
+          <td class="pinkText">Id is auto-generated</td>
+          <td><input [(ngModel)]="newProduct.catId" type="number" class="form-control"></td>
+          <td><input [(ngModel)]="newProduct.name" type="text" class="form-control"></td>
+          <td><input [(ngModel)]="newProduct.description" type="text" class="form-control"></td>
+          <td class="pinkText">Here comes the file upload to the avatar of product.</td>
+          <td><input [(ngModel)]="newProduct.price" type="number" class="form-control"></td>
+          <td><input [(ngModel)]="newProduct.stock" type="number" class="form-control"></td>
+          <td><input [(ngModel)]="newProduct.featured" type="checkbox" class="form-control"></td>
+          <td><input [(ngModel)]="newProduct.active" type="checkbox" class="form-control"></td>
+          <td><button (click)="onCreate(newProduct)" class="btn btn-success">Add user</button></td>
+        </tr>
         <tr *ngFor="let item of products$ | async">
           <td class="idShow">{{ item.id }}</td>
           <td> <input [(ngModel)]="item.catId" type="text" class="form-control" name="catId" id="name-id"></td>
