@@ -587,7 +587,9 @@ export class ProductService {
   }
 
   remove(id: Number): Observable<any> {
-    return this.http.delete<Observable<any>>(`${this.apiUrl}/${id}`);
+    return this.http.delete<Observable<any>>(
+      `${this.apiUrl}${this.entityName}/${id}`
+    );
   }
 
   create(product: Product): Observable<Product> {
