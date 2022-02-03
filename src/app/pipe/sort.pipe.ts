@@ -20,18 +20,22 @@ export class SortPipe implements PipeTransform {
       ...items.sort((a: any, b: any) => {
         if (type === 'string') {
           if (a[column].toUpperCase() < b[column].toUpperCase()) return -1;
+          if (a[column].toUpperCase() > b[column].toUpperCase()) return 1;
+          return 0;
         } else {
           return a[column] - b[column];
         }
       }),
     ];
   }
-  
+
   sortDescending(items: any, column: any, type: any) {
     return [
       ...items.sort((a: any, b: any) => {
         if (type === 'string') {
           if (a[column].toUpperCase() > b[column].toUpperCase()) return -1;
+          if (a[column].toUpperCase() < b[column].toUpperCase()) return 1;
+          return 0;
         } else {
           return b[column] - a[column];
         }
