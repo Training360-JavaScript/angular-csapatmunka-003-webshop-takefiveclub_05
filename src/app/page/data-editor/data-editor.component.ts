@@ -27,6 +27,17 @@ export class DataEditorComponent implements OnInit {
     switchMap((params) => this.productService.getAll())
   );
 
+  direction:string="asc";
+  column:string="id";
+  type:string | number="number";
+
+
+  setSortParams(direction:string, column:string, type:string){
+  this.direction = direction;
+  this.column = column;
+  this.type = type;
+  }
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
@@ -63,4 +74,5 @@ export class DataEditorComponent implements OnInit {
       .create(product)
       .subscribe((event) => (this.products$ = this.productService.getAll()));
   }
+
 }
