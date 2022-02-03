@@ -6,8 +6,7 @@
   </select>
 </div>
 <div class="col-8 mb-5 input_container">
-  <input [(ngModel)]="phrase" type="text" class="form-control"
-    placeholder="Type your search term here">
+  <input [(ngModel)]="phrase" type="text" class="form-control" placeholder="Type your search term here">
 </div>
 <div class="row">
   <div class="col-12">
@@ -59,7 +58,7 @@
           <td><input [(ngModel)]="newProduct.stock" type="number" class="form-control"></td>
           <td><input [(ngModel)]="newProduct.featured" type="checkbox" class="form-control"></td>
           <td><input [(ngModel)]="newProduct.active" type="checkbox" class="form-control"></td>
-          <td><button (click)="onCreate(newProduct)" class="btn btn-success">Add user</button></td>
+          <td><button (click)="onCreate(newProduct)" class="btn btn-success">Add new cocktail</button></td>
         </tr>
         <tr *ngFor="let item of products$ | async | filter:phrase:filterKey | sort:direction:column:type">
           <td class="idShow">{{ item.id }}</td>
