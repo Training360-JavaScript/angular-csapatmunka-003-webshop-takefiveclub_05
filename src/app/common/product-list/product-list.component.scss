@@ -25,13 +25,26 @@
   .form-group {
     width: 160px !important;
   }
+
   .col-4 {
     max-width: 80% !important;
   }
+
   .input_container {
     width: 360px !important;
   }
+
   .col-8 {
     max-width: 100% !important;
+  }
+}
+
+.select_container {
+  text-align: start;
+
+  .select {
+    display: inline-block;
+    width: auto;
+    margin-right: .5rem;
   }
 }

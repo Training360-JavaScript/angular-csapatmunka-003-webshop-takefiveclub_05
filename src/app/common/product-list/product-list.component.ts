@@ -12,6 +12,18 @@ export class ProductListComponent implements OnInit {
   phrase: string = '';
   filterKey: string = '';
 
+  direction:string="asc";
+  column:string="id";
+  type:string | number="number";
+
+
+  setSortParams(direction:string, column:string, type:string){
+  this.direction = direction;
+  let key = this.keys.find(key => key.toLowerCase() === column.toLowerCase()) || 'id';
+  this.column = key;
+  this.type = typeof Product[key];
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
