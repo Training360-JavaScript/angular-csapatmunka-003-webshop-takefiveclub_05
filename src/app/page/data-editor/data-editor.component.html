@@ -13,15 +13,39 @@
   <div class="col-12">
     <table class="table">
       <thead>
-        <th>Id</th>
-        <th>Category ID:</th>
-        <th>Name:</th>
-        <th>Description:</th>
+        <th>Id
+          <i (click)="setSortParams('desc', 'id', 'number')" class="fa fa-arrow-up"></i>
+          <i (click)="setSortParams('asc', 'id', 'number')" class="fa fa-arrow-down"></i>
+        </th>
+        <th>Category ID:
+          <i (click)="setSortParams('desc', 'catId', 'number')" class="fa fa-arrow-up"></i>
+          <i (click)="setSortParams('asc', 'catId', 'number')" class="fa fa-arrow-down"></i>
+        </th>
+        <th>Name:
+          <i (click)="setSortParams('desc', 'name', 'string')" class="fa fa-arrow-up"></i>
+          <i (click)="setSortParams('asc', 'name', 'string')" class="fa fa-arrow-down"></i>
+        </th>
+        <th>Description:
+          <i (click)="setSortParams('desc', 'description', 'string')" class="fa fa-arrow-up"></i>
+          <i (click)="setSortParams('asc', 'description', 'string')" class="fa fa-arrow-down"></i>
+        </th>
         <th>Image:</th>
-        <th>Price:</th>
-        <th>Stock:</th>
-        <th>Is it featured?</th>
-        <th>Is it active?</th>
+        <th>Price:
+          <i (click)="setSortParams('desc', 'price', 'number')" class="fa fa-arrow-up"></i>
+          <i (click)="setSortParams('asc', 'price', 'number')" class="fa fa-arrow-down"></i>
+        </th>
+        <th>Stock:
+          <i (click)="setSortParams('desc', 'stock', 'number')" class="fa fa-arrow-up"></i>
+          <i (click)="setSortParams('asc', 'stock', 'number')" class="fa fa-arrow-down"></i>
+        </th>
+        <th>Is it featured?
+          <i (click)="setSortParams('desc', 'featured', 'number')" class="fa fa-arrow-up"></i>
+          <i (click)="setSortParams('asc', 'featured', 'number')" class="fa fa-arrow-down"></i>
+        </th>
+        <th>Is it active?
+          <i (click)="setSortParams('desc', 'featured', 'number')" class="fa fa-arrow-up"></i>
+          <i (click)="setSortParams('asc', 'featured', 'number')" class="fa fa-arrow-down"></i>
+        </th>
         <th>Operations on the product</th>
       </thead>
       <tbody>
@@ -37,7 +61,7 @@
           <td><input [(ngModel)]="newProduct.active" type="checkbox" class="form-control"></td>
           <td><button (click)="onCreate(newProduct)" class="btn btn-success">Add user</button></td>
         </tr>
-        <tr *ngFor="let item of products$ | async | filter:phrase:filterKey">
+        <tr *ngFor="let item of products$ | async | filter:phrase:filterKey | sort:direction:column:type">
           <td class="idShow">{{ item.id }}</td>
           <td> <input [(ngModel)]="item.catId" type="text" class="form-control" name="catId" id="name-id"></td>
           <td> <input [(ngModel)]="item.name" type="text" class="form-control" name="name" id="cat-id"></td>

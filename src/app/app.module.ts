@@ -17,6 +17,7 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './page/admin/admin.component';
 import { DataEditorComponent } from './page/data-editor/data-editor.component';
+import { SortPipe } from './pipe/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DataEditorComponent } from './page/data-editor/data-editor.component';
     FilterPipe,
     AdminComponent,
     DataEditorComponent,
+    SortPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
