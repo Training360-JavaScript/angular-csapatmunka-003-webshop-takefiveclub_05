@@ -25,12 +25,10 @@ export class ProductCarouselComponent implements OnInit {
   ngOnInit(): void {
     this.products$.subscribe({
       next: (value) => {
-        // this.products = value;
         this.carouselList = this.listToMatrix(this.products, this.subLength);
       },
       error: (err) => console.error(err),
     })
-    // console.log('this.products', this.products)
     this.screenWidth = window.innerWidth;
     this.setSublength();
   }
@@ -38,7 +36,6 @@ export class ProductCarouselComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.screenWidth = window.innerWidth;
-    // console.log(this.screenWidth);
 
     if (this.screenWidth > 1024 && this.subLength != 5) {
       this.ngOnInit();
