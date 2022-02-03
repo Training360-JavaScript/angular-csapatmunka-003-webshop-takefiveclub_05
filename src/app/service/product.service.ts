@@ -571,7 +571,6 @@ export class ProductService {
 
   /* async */
   getAll(): Observable<Product[]> {
-    console.log(`${this.apiUrl}${this.entityName}`);
     return this.http.get<Product[]>(`${this.apiUrl}${this.entityName}`);
   }
 

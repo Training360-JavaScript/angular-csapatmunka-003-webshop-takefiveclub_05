@@ -4,11 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'sort',
 })
 export class SortPipe implements PipeTransform {
-  // transform(value: unknown, ...args: unknown[]): unknown {
-  //   return null;
-  // }
 
   transform(items: [], direction: string, column: string, type: string | number) {
+    if (!items) return
     let sortedItems = [];
     sortedItems =
       direction === 'asc'
@@ -16,6 +14,7 @@ export class SortPipe implements PipeTransform {
         : this.sortDescending(items, column, type);
     return sortedItems;
   }
+
   sortAscending(items: any, column: any, type: any) {
     return [
       ...items.sort((a: any, b: any) => {
@@ -27,6 +26,7 @@ export class SortPipe implements PipeTransform {
       }),
     ];
   }
+  
   sortDescending(items: any, column: any, type: any) {
     return [
       ...items.sort((a: any, b: any) => {

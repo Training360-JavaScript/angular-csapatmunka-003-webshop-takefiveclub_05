@@ -1,5 +1,5 @@
 export class Product {
-  [key: string]: any;
+  [key: string]: string | number | boolean;
   id: number = 0;
   catId: number = 0;
   name: string = '';
